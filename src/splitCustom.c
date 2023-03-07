@@ -21,7 +21,7 @@
   
  */
 
-void registerCustomFunctions() {
+void registerCustomFunctions(void) {
 
   // Register the custom classification split rule in the first slot.
   registerThis (&getCustomSplitStatisticMultivariateClassification, CLAS_FAM, 1);
