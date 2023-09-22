@@ -1,3 +1,6 @@
+## CovRegRF 1.0.4
+* Copyright information for LAPACK and BLAS libraries are added to the DESCRIPTION file.
+
 ## CovRegRF 1.0.3
 * Fixed function declaration without a prototype.
 * Fixed sprintf calls per Prof. Ripley.

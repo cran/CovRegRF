@@ -28,7 +28,7 @@
 ******************************************************************************
 * Contents: Native C interface to LAPACK
 * Author: Intel Corporation
-* Generated August, 2015
+* Generated September, 2023
 *****************************************************************************/
 
 #ifndef _LAPACKE_H_
@@ -43,13 +43,31 @@
 
 #include <R_ext/Lapack.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <inttypes.h>
 
+/*----------------------------------------------------------------------------*/
 #ifndef lapack_int
-#define lapack_int int
+#if defined(LAPACK_ILP64)
+#define lapack_int        int64_t
+#else
+#define lapack_int        int32_t
+#endif
+#endif
+
+/*
+ * Integer format string
+ */
+#ifndef LAPACK_IFMT
+#if defined(LAPACK_ILP64)
+#define LAPACK_IFMT       PRId64
+#else
+#define LAPACK_IFMT       PRId32
+#endif
 #endif
 
 #ifndef lapack_logical
-#define lapack_logical lapack_int
+#define lapack_logical    lapack_int
 #endif
 
 /* Complex types are structures equivalent to the
