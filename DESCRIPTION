@@ -1,7 +1,7 @@
 Package: CovRegRF
 Type: Package
 Title: Covariance Regression with Random Forests
-Version: 1.0.4
+Version: 1.0.5
 Authors@R: 
     c(person(given = "Cansu", family = "Alakus", role = c("aut", "cre"), email = "cansu.alakus@hec.ca"),
       person(given = "Denis", family = "Larocque", role = c("aut"), email = "denis.larocque@hec.ca"),
@@ -34,7 +34,7 @@ Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2023-09-21 18:54:52 UTC; cansualakus
+Packaged: 2023-12-06 21:11:08 UTC; cansualakus
 Author: Cansu Alakus [aut, cre],
   Denis Larocque [aut],
   Aurelie Labbe [aut],
@@ -44,4 +44,4 @@ Author: Cansu Alakus [aut, cre],
   Keita Teranishi [ctb] (Author of included cblas_dgemm.c codes)
 Maintainer: Cansu Alakus <cansu.alakus@hec.ca>
 Repository: CRAN
-Date/Publication: 2023-09-22 15:40:06 UTC
+Date/Publication: 2023-12-07 00:20:02 UTC

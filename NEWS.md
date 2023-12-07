@@ -1,3 +1,6 @@
+## CovRegRF 1.0.5
+* Fixed warning: format string is not a string literal.
+
 ## CovRegRF 1.0.4
 * Copyright information for LAPACK and BLAS libraries are added to the DESCRIPTION file.
 
