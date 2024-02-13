@@ -13,7 +13,7 @@ vignette: >
 
 
 
-This R package implements the **Cov**ariance **Reg**ression with **R**andom **F**orests (**CovRegRF**) method described in Alakus et al. (2022) [<arxiv:2209.08173>](https://arxiv.org/abs/2209.08173). The theoretical details of the proposed method are presented in Section 1 followed by a data analysis using this method in Section 2. 
+This R package implements the **Cov**ariance **Reg**ression with **R**andom **F**orests (**CovRegRF**) method described in Alakus et al. (2023) [<doi:10.1186/s12859-023-05377-y>](https://doi.org/10.1186/s12859-023-05377-y). The theoretical details of the proposed method are presented in Section 1 followed by a data analysis using this method in Section 2. 
 
 # Proposed method
 
@@ -81,7 +81,7 @@ vimp.obj$importance
 plot.vimp(vimp.obj)
 ```
 
-<img src="vimp_plot-1.png" alt="plot of chunk vimp_plot" style="display: block; margin: auto;" />
+<img src="vimp_plot-1.png" title="plot of chunk vimp_plot" alt="plot of chunk vimp_plot" style="display: block; margin: auto;" />
 
 From the VIMP measures, we see that $X_3$ has smaller importance than $X_1$ and $X_2$. We apply the significance test to evaluate the effect of $X_3$ on the covariance matrices while controlling for $X_1$ and $X_2$.
 
@@ -113,18 +113,18 @@ head(pred, 2)
 ```
 
 # References
-Alakus, C., Larocque, D., and Labbe, A. (2022). Covariance regression with random forests. *arXiv preprint arXiv:2209.08173*.
+Alakus, C., Larocque, D., and Labbe, A. (2023). Covariance regression with random forests. *BMC Bioinformatics* 24, 258.
 
 # Session info
 
 ```r
 sessionInfo()
-#> R version 4.2.2 (2022-10-31)
-#> Platform: aarch64-apple-darwin20 (64-bit)
-#> Running under: macOS Ventura 13.2.1
+#> R version 4.2.0 (2022-04-22)
+#> Platform: x86_64-apple-darwin17.0 (64-bit)
+#> Running under: macOS Monterey 12.6.3
 #> 
 #> Matrix products: default
-#> LAPACK: /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/lib/libRlapack.dylib
+#> LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
 #> 
 #> locale:
 #> [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -133,13 +133,12 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] CovRegRF_1.0.3
+#> [1] CovRegRF_2.0.0
 #> 
 #> loaded via a namespace (and not attached):
-#>  [1] visNetwork_2.1.2   digest_0.6.31      R6_2.5.1           jsonlite_1.8.4    
-#>  [5] magrittr_2.0.3     evaluate_0.20      highr_0.10         rlang_1.1.1       
-#>  [9] stringi_1.7.12     cli_3.6.0          data.table_1.14.8  rstudioapi_0.14   
-#> [13] DiagrammeR_1.0.9   data.tree_1.0.0    RColorBrewer_1.1-3 tools_4.2.2       
-#> [17] glue_1.6.2         htmlwidgets_1.6.1  parallel_4.2.2     fastmap_1.1.1     
-#> [21] xfun_0.39          compiler_4.2.2     htmltools_0.5.4    knitr_1.42
+#>  [1] visNetwork_2.1.0   digest_0.6.29      R6_2.5.1           jsonlite_1.8.0     magrittr_2.0.3     evaluate_0.15     
+#>  [7] highr_0.9          rlang_1.0.6        stringi_1.7.8      cli_3.6.0          data.table_1.14.2  rstudioapi_0.13   
+#> [13] DiagrammeR_1.0.9   rmarkdown_2.14     data.tree_1.0.0    RColorBrewer_1.1-3 tools_4.2.0        stringr_1.4.0     
+#> [19] htmlwidgets_1.5.4  glue_1.6.2         parallel_4.2.0     xfun_0.31          yaml_2.3.5         fastmap_1.1.0     
+#> [25] compiler_4.2.0     htmltools_0.5.3    knitr_1.39
 ```

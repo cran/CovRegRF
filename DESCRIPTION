@@ -1,7 +1,7 @@
 Package: CovRegRF
 Type: Package
 Title: Covariance Regression with Random Forests
-Version: 1.0.5
+Version: 2.0.0
 Authors@R: 
     c(person(given = "Cansu", family = "Alakus", role = c("aut", "cre"), email = "cansu.alakus@hec.ca"),
       person(given = "Denis", family = "Larocque", role = c("aut"), email = "denis.larocque@hec.ca"),
@@ -10,7 +10,7 @@ Authors@R:
       person(given = "Udaya B.", family = "Kogalur", role = c("ctb"), comment = "Author of included 'randomForestSRC' codes"),
       person("Intel Corporation", role = c("cph"), comment = "Copyright holder of included LAPACKE codes"),
       person(given = "Keita", family = "Teranishi", role = c("ctb"), comment = "Author of included cblas_dgemm.c codes"))
-Description: Covariance Regression with Random Forests ('CovRegRF') is a
+Description: Covariance Regression with Random Forests (CovRegRF) is a
     random forest method for estimating the covariance matrix of a
     multivariate response given a set of covariates. Random forest trees
     are built with a new splitting rule which is designed to maximize the
@@ -20,10 +20,10 @@ Description: Covariance Regression with Random Forests ('CovRegRF') is a
     (Ishwaran and Kogalur, 2022) 
     <https://cran.r-project.org/package=randomForestSRC> by freezing at the
     version 3.1.0. The custom splitting rule feature is utilised to apply the
-    proposed splitting rule. 'LAPACK' and 'BLAS' libraries are used for matrix 
-    decompositions. The 'CovRegRF' package includes the header files 'lapacke.h' 
-    and 'cblas.h' from the 'LAPACK' and 'BLAS' libraries. The 'LAPACK' library 
-    is licensed under modified BSD license.
+    proposed splitting rule. The 'randomForestSRC' package implements 'OpenMP' 
+    by default, contingent upon the support provided by the target architecture 
+    and operating system. In this package, 'LAPACK' and 'BLAS' libraries are 
+    used for matrix decompositions.
 Depends: R (>= 3.6.0)
 License: GPL (>= 3)
 Encoding: UTF-8
@@ -34,7 +34,7 @@ Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2023-12-06 21:11:08 UTC; cansualakus
+Packaged: 2024-02-12 19:18:36 UTC; cansualakus
 Author: Cansu Alakus [aut, cre],
   Denis Larocque [aut],
   Aurelie Labbe [aut],
@@ -44,4 +44,4 @@ Author: Cansu Alakus [aut, cre],
   Keita Teranishi [ctb] (Author of included cblas_dgemm.c codes)
 Maintainer: Cansu Alakus <cansu.alakus@hec.ca>
 Repository: CRAN
-Date/Publication: 2023-12-07 00:20:02 UTC
+Date/Publication: 2024-02-13 17:12:47 UTC

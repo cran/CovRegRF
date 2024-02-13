@@ -19,7 +19,7 @@ generic.predict.rfsrc <-
            do.trace = FALSE,
            membership = FALSE,
            statistics = FALSE,
-            
+
            ...)
 {
   univariate.nomenclature <- TRUE
@@ -59,7 +59,7 @@ generic.predict.rfsrc <-
   ## verify other key options
   outcome <- match.arg(outcome, c("train", "test"))
   proximity <- match.arg(as.character(proximity), c(FALSE, TRUE, "inbag", "oob", "all"))
-  forest.wt <- match.arg(as.character(forest.wt), c(FALSE, TRUE, "inbag", "oob", "all"))  
+  forest.wt <- match.arg(as.character(forest.wt), c(FALSE, TRUE, "inbag", "oob", "all"))
   distance <- match.arg(as.character(distance), c(FALSE, TRUE, "inbag", "oob", "all"))
   ## set restore.mode and the ensemble option
   ## newdata missing --> restore.mode = TRUE
@@ -111,7 +111,7 @@ generic.predict.rfsrc <-
   subj.names <- object$subj.names
   importance.xvar <- get.importance.xvar(importance.xvar, importance, object)
   importance.xvar.idx <- match(importance.xvar, xvar.names)
-   
+
   var.used <- match.arg(as.character(var.used), c("FALSE", "all.trees", "by.tree"))
   if (var.used == "FALSE") var.used <- FALSE
   split.depth <- match.arg(as.character(split.depth),  c("FALSE", "all.trees", "by.tree"))
@@ -136,12 +136,12 @@ generic.predict.rfsrc <-
   }
   ## confirm version coherence
   if (is.null(object$version)) {
-    cat("\n  This function only works with objects created with the following minimum version of the package:")
-    cat("\n    Minimum version:  ")
-    cat("2.3.0")
-    cat("\n    Your version:     ")
-    cat("unknown")
-    cat("\n")
+    # cat("\n  This function only works with objects created with the following minimum version of the package:")
+    # cat("\n    Minimum version:  ")
+    # cat("2.3.0")
+    # cat("\n    Your version:     ")
+    # cat("unknown")
+    # cat("\n")
     stop()
   }
     else {
@@ -157,12 +157,12 @@ generic.predict.rfsrc <-
         ## We are okay
       }
         else {
-          cat("\n  This function only works with objects created with the following minimum version of the package:")
-          cat("\n    Minimum version:  ")
-          cat("2.3.0")
-          cat("\n    Your version:     ")
-          cat(object$version)
-          cat("\n")
+          # cat("\n  This function only works with objects created with the following minimum version of the package:")
+          # cat("\n    Minimum version:  ")
+          # cat("2.3.0")
+          # cat("\n    Your version:     ")
+          # cat(object$version)
+          # cat("\n")
           stop()
         }
   }
@@ -172,7 +172,7 @@ generic.predict.rfsrc <-
     ## rfq specific details
     if (!is.null(rfq)) {##predict has specified rfq
       if (!rfq) {##predict does not want rfq
-        ## nothing 
+        ## nothing
       }
       else {##predict has requested rfq
         class.relfrq <- table(object$yvar) / length(object$yvar)
@@ -195,7 +195,7 @@ generic.predict.rfsrc <-
   ## recover the split rule
   splitrule <- object$splitrule
   ## gk processing
-  if (!is.null(gk.quantile) || object$gk.quantile) { 
+  if (!is.null(gk.quantile) || object$gk.quantile) {
     if (is.null(gk.quantile)) {##predict ambivalent about gk - use grow spec
       gk.quantile <- object$gk.quantile
     }
@@ -398,8 +398,8 @@ generic.predict.rfsrc <-
     }
     ## restore hidden parameters
     if (is.null(user.option$vimp.threshold)) {
-      vimp.threshold <- object$vimp.threshold 
-    }      
+      vimp.threshold <- object$vimp.threshold
+    }
   } ## ends restore.mode check
   ## ------------------------------------------------------------
   ## We have completed the restore/non-restore mode processing
@@ -480,7 +480,7 @@ generic.predict.rfsrc <-
   csv.bits = get.csv(csv)
   jitt.bits <- get.jitt(jitt)
   ## set the data.pass flags: we do this here because the restore.mode flag is now finalized
-  ## training data.pass acquires the grow data.pass flag 
+  ## training data.pass acquires the grow data.pass flag
   data.pass.bits <- get.data.pass(object$data.pass)
   ## testing data.pass is na.action AND restore.mode dependent
   if (restore.mode == FALSE) {
@@ -529,7 +529,7 @@ generic.predict.rfsrc <-
       pivot = 0
       chunk = 0
   }
-   
+
   ## Start the C external timer.
   ctime.external.start  <- proc.time()
   nativeOutput <- tryCatch({.Call("rfsrcPredict",
@@ -581,7 +581,7 @@ generic.predict.rfsrc <-
                                   if (is.null(yvar.types)) NULL else as.double(as.vector(yvar)),
                                   list(as.integer(n.xvar),
                                        as.character(xvar.types),
-                                       if (is.null(xvar.types)) NULL else as.integer(xvar.nlevels),                                       
+                                       if (is.null(xvar.types)) NULL else as.integer(xvar.nlevels),
                                        if (is.null(xvar.numeric.levels)) NULL else sapply(1:length(xvar.numeric.levels), function(nn) {as.integer(length(xvar.numeric.levels[[nn]]))}),
                                        NULL,
                                        NULL),
@@ -606,7 +606,7 @@ generic.predict.rfsrc <-
                                        as.integer(object$optLoGrow)),
                                   as.integer(hdim),
                                   ## Object containing base learner settings.  This is never NULL.
-                                  object$base.learner, 
+                                  object$base.learner,
                                   as.integer((object$nativeArray)$treeID),
                                   as.integer((object$nativeArray)$nodeID),
                                   as.integer((object$nativeArray)$nodeSZ),
@@ -632,7 +632,7 @@ generic.predict.rfsrc <-
                                                as.integer((object$nativeArray)$augmXS))
                                       } else { NULL }
                                   } else { NULL },
-                                  
+
                                   NULL,
                                   NULL,
                                   NULL,
@@ -644,8 +644,8 @@ generic.predict.rfsrc <-
                                   NULL,
                                   NULL,
                                   NULL,
-                                  
-                                   
+
+
                                   as.integer(object$nativeArrayTNDS$tnRMBR),
                                   as.integer(object$nativeArrayTNDS$tnAMBR),
                                   as.integer(object$nativeArrayTNDS$tnRCNT),
@@ -661,10 +661,10 @@ generic.predict.rfsrc <-
                                   list(if (is.null(m.target.idx)) as.integer(0) else as.integer(length(m.target.idx)),
                                        if (is.null(m.target.idx)) NULL else as.integer(m.target.idx)),
                                   as.integer(ptn.count),
-                                  
+
                                   NULL,
-                                  
-                                    
+
+
                                   list(if (is.null(importance.xvar.idx)) as.integer(0) else as.integer(length(importance.xvar.idx)),
                                        if (is.null(importance.xvar.idx)) NULL else as.integer(importance.xvar.idx)),
                                   ## Partial variables disabled.
@@ -1214,7 +1214,7 @@ generic.predict.rfsrc <-
         ## -> of dim [[resp.class.count]] x [n] x [n.xvar]
         ## From the native code:
         ##   "csvDen"
-        ## -> of dim [n.xvar] x [n] 
+        ## -> of dim [n.xvar] x [n]
         ## To the R code:
         ## -> of dim  x [n]  x [n.xvar]
         for (i in 1:length(m.target.idx)) {
@@ -1281,11 +1281,11 @@ generic.predict.rfsrc <-
               remove(importance)
             }
             ## See GROW call for explanation of arrays:
-            csv.idx  <- array(0, n.observed * n.xvar) 
+            csv.idx  <- array(0, n.observed * n.xvar)
             j2seq <- (target.idx - 1) * n.observed
             for (j in 1:n.xvar) {
               j1seq <- (j - 1) * n.observed
-              csv.idx[(j1seq + 1) : (j1seq + n.observed)]  <- ( (j2seq + j1seq * class.count + 1) : (j2seq + j1seq * class.count + n.observed) ) 
+              csv.idx[(j1seq + 1) : (j1seq + n.observed)]  <- ( (j2seq + j1seq * class.count + 1) : (j2seq + j1seq * class.count + n.observed) )
             }
             ## New case specific arrays, numerator:
             csv.num <- (if (!is.null(nativeOutput$csvClas))
@@ -1386,7 +1386,7 @@ generic.predict.rfsrc <-
         ## -> of dim [[regr.count]] x [n] x [n.xvar]
         ## From the native code:
         ##   "csvDen"
-        ## -> of dim [n.xvar] x [n] 
+        ## -> of dim [n.xvar] x [n]
         ## To the R code:
         ## -> of dim  x [n]  x [n.xvar]
         for (i in 1:length(m.target.idx)) {
@@ -1449,7 +1449,7 @@ generic.predict.rfsrc <-
             j2seq <- (target.idx - 1) * n.observed
             for (j in 1:n.xvar) {
               j1seq <- (j - 1) * n.observed
-              csv.idx[(j1seq + 1) : (j1seq + n.observed)]  <- ( (j2seq + j1seq * regr.count + 1) : (j2seq + j1seq * regr.count + n.observed) ) 
+              csv.idx[(j1seq + 1) : (j1seq + n.observed)]  <- ( (j2seq + j1seq * regr.count + 1) : (j2seq + j1seq * regr.count + n.observed) )
             }
             ## New case specific arrays, numerator:
             csv.num <- (if (!is.null(nativeOutput$csvRegr))

@@ -34,7 +34,8 @@ Obtain predicted covariance matrices using a covregrf forest for training or
   new data.
 }
 \examples{
-\donttest{
+options(rf.cores=2, mc.cores=2)
+
 ## load generated example data
 data(data, package = "CovRegRF")
 xvar.names <- colnames(data$X)
@@ -60,7 +61,7 @@ pred.oob <- pred.obj$predicted
 ## predict with new test data
 pred.obj2 <- predict(covregrf.obj, newdata = testdata)
 pred <- pred.obj2$predicted
-}
+
 
 }
 \seealso{

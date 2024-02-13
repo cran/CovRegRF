@@ -1,3 +1,6 @@
+## CovRegRF 2.0.0
+* Internal lapacke.h and cblas.h files are removed. Instead, LAPACK and BLAS libraries are used.
+
 ## CovRegRF 1.0.5
 * Fixed warning: format string is not a string literal.
 

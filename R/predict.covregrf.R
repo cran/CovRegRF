@@ -23,7 +23,8 @@
 #'   \item{yvar.names}{A character vector of the response variable names.}
 #'
 #' @examples
-#' \donttest{
+#' options(rf.cores=2, mc.cores=2)
+#'
 #' ## load generated example data
 #' data(data, package = "CovRegRF")
 #' xvar.names <- colnames(data$X)
@@ -49,7 +50,7 @@
 #' ## predict with new test data
 #' pred.obj2 <- predict(covregrf.obj, newdata = testdata)
 #' pred <- pred.obj2$predicted
-#' }
+#'
 #'
 #' @seealso
 #'   \code{\link{covregrf}}
