@@ -1,3 +1,6 @@
+## CovRegRF 2.0.1
+* Non-API entry points in R converted to API entry points.
+
 ## CovRegRF 2.0.0
 * Internal lapacke.h and cblas.h files are removed. Instead, LAPACK and BLAS libraries are used.
 

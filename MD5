@@ -1,6 +1,6 @@
-0868154172bd183bc1a7601ffb5a646d *DESCRIPTION
+7c5af7d9a00f41b6a333e9a24d93c5b6 *DESCRIPTION
 9cb49ad536137a3f2eeb8633298cde3b *NAMESPACE
-425d169a569c8b6929840e60b96750ed *NEWS.md
+a0bbc658ad59672555dd1dd8e13170e4 *NEWS.md
 83334378548bf174edb9000e2c8bda63 *R/build.bop.R
 e9b074bed08f78ebc9568d9b0cb2e871 *R/covregrf-package.R
 a23fe44d10a16951a8498d9d03abd55f *R/covregrf.R
@@ -57,8 +57,8 @@ ec79a981c2c3c42b323bb4c2569af0c3 *R/vimp.rfsrc.R
 c4a955c3514d10b251d22773898446b1 *README.md
 24a9806e7a05b47e016236e094ef42c6 *build/vignette.rds
 e66900a0e679a19b0c32de56a9a33366 *cleanup
-af9f4045f169b50aba29ee8ffcaca92d *configure
-ecfbd9178778dc6fbf24822c3d65c3fa *configure.ac
+e2a150b7b4e270cd77761c1436a0f730 *configure
+4e7afd6f1f63a214ad093dac6d307f11 *configure.ac
 0ccb7b83267ca60ae84a969b87b40fad *data/data.rda
 6282ceae724959d356b1b4a7c862f2e5 *inst/doc/CovRegRF.Rmd
 555d4fa148395e83ee3e58e9affd250b *inst/doc/CovRegRF.html
@@ -73,7 +73,7 @@ b20cdfb8cffed32fd1ac57a07ab7bf21 *man/print.covregrf.Rd
 b23888d45d2c8eaffc7892bb5a3498c2 *src/Makevars.in
 36434a861e3c1aafc705fa2de6effb98 *src/Makevars.win
 ff3b32bd42733ad6b31038a4cc86650d *src/R_init_randomForestSRC.c
-ad8d7ce5114e0fc7632d7e54efa0382a *src/randomForestSRC.c
+f0ddac5b29660f7848bec23de47223e7 *src/randomForestSRC.c
 52bc6f5b511545dac63c7a7b323302b6 *src/randomForestSRC.h
 5e1826c38b23ba70e257065d7a65b9a7 *src/splitCustom.c
 e065d55101cf03b5fe4e0f00e87ef3ac *src/splitCustom.h
